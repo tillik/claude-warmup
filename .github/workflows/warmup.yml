@@ -60,3 +60,6 @@ jobs:
 
           echo "Claude warmup failed with an unexpected error."
           exit $status
+      - name: Notify on completion
+        if: always()
+        run: echo "Warmup claude code on github tillik completed with status ${{ job.status }}"
